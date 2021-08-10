@@ -1,0 +1,12 @@
+Types of data errors for cleansing:
+- Duplication/redundancy
+- Date (format, range)
+- White spaces (trail, lead)
+- Sanity checking (outliers)
+- Punctuation
+- MIssing data
+- Unlabled columns
+
+ETL - Extract, Transform, Load
+
+NULL = Undefined (do not know the value yet)
