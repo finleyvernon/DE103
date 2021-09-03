@@ -1,0 +1,5 @@
+100,Brewery Sponsor
+101,Gear Sponsor
+102,Tobacco Sponsor
+103,Little Wheels Sponsor
+104,Big Wheels Supplier Sponsor

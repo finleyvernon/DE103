@@ -1,0 +1,11 @@
+USE [AdventureWorks2014]
+GO
+
+CREATE TABLE [HumanResources].[Department_Temp](
+	[DepartmentID] [smallint] NOT NULL,
+	[DepartmentName] varchar(250) NOT NULL,
+	[DepartmentGroupName] varchar(250) NOT NULL,
+	[ModifiedDate] [datetime] NOT NULL 
+) ON [PRIMARY]
+
+
