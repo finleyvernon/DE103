@@ -1,0 +1,9 @@
+room_type,occupancy,amount
+double,1,56.00
+double,2,72.00
+family,1,56.00
+family,2,72.00
+family,3,84.00
+single,1,48.00
+twin,1,50.00
+twin,2,72.00
