@@ -1,0 +1,6 @@
+use n before the string you are comparing to, which would narrow down the data type you are looking for from varchar to nvharchar to lower the time needed to execute the query
+
+select [productnumber], [colour], [listprice]
+from [production].[product]
+where [colour] = N'Black';
+GO

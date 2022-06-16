@@ -41,7 +41,11 @@ from  HumanResources.Employee e
 -- combine that with the comments and product review ID from 
 -- the ProductReview table using the ProductReviewID to 
 -- establish the relationship
-SELECT p.Name, pr.ProductReviewID, pr.CommentsFROM Production.Product pINNER JOIN Production.ProductReview prON p.ProductID = pr.ProductID;GO
+SELECT p.Name, pr.ProductReviewID, pr.Comments
+FROM Production.Product p
+INNER JOIN Production.ProductReview pr
+ON p.ProductID = pr.ProductID;
+GO
 
 -- We want to see how many different types of people
 -- are represented in the Person table.
@@ -86,6 +90,12 @@ FROM HumanResources.Employee
 WHERE MaritalStatus  ='M';
 GO
 
+sp_helpindex '[HumanResources].[Employee]';
+GO
+
+sp_helpindex '[Person].[Person]';
+GO
+
 -- Use the WHERE clause to return only the records in 
 -- the Employee table where the employees are male
 SELECT LoginID, JobTitle
@@ -115,4 +125,24 @@ GO
 
 -- Switch off the XML statistics
 SET STATISTICS XML OFF
+GO
+
+SELECT [BusinessEntityID], [FirstName], [LastName], [EmailPromotion]
+FROM [Person].[Person]
+WHERE [EmailPromotion] = 1;
+
+-- Drop an index
+
+DROP INDEX IF EXISTS AK_Person_rowguid
+ON [Person].[Person];
+
+-- Create an index based on context
+
+CREATE NONCLUSTERED INDEX IDX_Person_EmailPromotion
+ON [Person].[Person]([EmailPromotion]);
+
+SELECT FirstName, MiddleName, LastName
+FROM Person.Person
+WHERE MiddleName <> 'A'
+OR MiddleName IS NULL;
 GO

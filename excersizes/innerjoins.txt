@@ -1,0 +1,9 @@
+How to inner join:
+
+SELECT <column> FROM <table>
+{inner} join <foreign table> ON <table>.<foreignkey> = <foreigntable>.<foreigntableprimarykey>
+
+Example:
+
+SELECT * FROM Orders
+inner join Products ON Orders.ProductID = Products.id
